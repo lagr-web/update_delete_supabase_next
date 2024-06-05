@@ -1,0 +1,88 @@
+$border-color: #cccccc;
+$border-width: 1px;
+$border-radius: 5px;
+
+// Adjust this value to change the rounded corners
+@mixin border-style($color, $width, $radius) {
+    border: $width solid $color;
+    border-radius: $radius;
+}
+
+#dataContainer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.dataBut {
+    color: #cccccc;
+    cursor: pointer;
+
+    &:hover {
+        color: #666666;
+    }
+}
+
+.id {
+    color: #cccccc;
+}
+
+#modalContainer {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 200;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.4);
+    background-color: white;
+
+    #name {
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding-top: 3px;
+        padding-left: 5px;
+        height: 40px;
+    }
+
+    #headline {
+        background-color: black;
+        display: grid;
+        grid-template-columns: 80% 20%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    #close {
+        background-color: black;
+        margin:5px;
+        justify-self: end;
+        width:15px;
+        cursor: pointer;
+    }
+
+    input {
+        @include border-style($border-color, $border-width, $border-radius);
+        margin: 5px; // Add desired margin
+        padding: 5px;
+        width: calc(100% - 10px); // Adjust width to account for horizontal margins
+        box-sizing: border-box; // Include padding and border in width calculation
+    }
+
+    #update {
+        display: grid;
+    }
+
+    button {
+        background-color: black;
+        border-radius: 5px;
+        font-size:12px;
+        color: white;
+        padding:4px;
+        width:100px;
+        margin: 6px;
+        justify-self: end;
+    }
+}
